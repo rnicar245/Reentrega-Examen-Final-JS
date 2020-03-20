@@ -1,0 +1,42 @@
+<head>
+	<meta charset="UTF-8">
+    <script src="js/index.js"></script>
+    <script src="js/Alumnos.js"></script>
+</head>
+<body>
+	<noscript>
+		<p>Para ver la página correctamente, por favor, active JavaScript</p>
+	  </noscript>
+	  <h1>Rafael Jesús Nieto Cardador</h1>
+		<form >
+			<legend>Alta del alumno</legend>
+			<fieldset>
+				<div>
+					<label for ="nombre" >Nombre</label>
+					<input type = "text" id="nombre" placeholder="Nombre"/>
+					<span id = 'msj_nombre'></span>
+				</div>
+				<div>
+					<label for ="apellido1"  >Primer apellido </label>
+					<input type = "text" id="apellido1" placeholder="Apellido primero"/>
+					<span id = 'msj_apellido1'></span>
+				</div>
+				<div>
+					<label for ="apellido2" >Segundo Apellido </label>
+					<input type = "text" id="apellido2" placeholder="Apellido segundo"/>
+					<span id = 'msj_apellido2'></span>
+				</div>
+				<div>
+					<label for ="fecha" >Fecha de nacimiento</label>
+					<input type = "text" id="fecha" placeholder="dd-mm-aaaa"/>
+					<span id = 'msj_fecha'></span>
+				</div>
+			</fieldset>
+			
+			<div>
+				<input type = "button" value = "Crear"  id = 'crear'>
+				<input type = "reset" value = "Limpiar" id = 'limpiar'>
+			</div>
+		</form>
+</body>
+		
