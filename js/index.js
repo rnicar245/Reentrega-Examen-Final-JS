@@ -3,6 +3,7 @@
  */
 {
     let elementos = [];
+    let edad;
     let inicio = function(){
         elementos = document.getElementsByTagName("input");
         elementos[4].addEventListener("click", crearAlumno);
@@ -14,7 +15,7 @@
     
     let crearAlumno = function(){
         if(validar()){
-            let alumno = new Alumnos(elementos[0].value, elementos[1].value, elementos[2].value, elementos[3].value);
+            let alumno = new Alumnos(elementos[0].value, elementos[1].value, elementos[2].value, elementos[3].value, edad);
             alumno.mostrar();
         }
     }
@@ -41,6 +42,7 @@
         let fechaSpan = document.getElementById("msj_fecha");
         if(datosFecha != null){ 
             fecha = new Date(datosFecha[2]+"-"+datosFecha[1]+"-"+datosFecha[3]); 
+            edad = Math.round(((new Date() - fecha) / (1000*60*60*24*365))-1);
             if(datosFecha[1] != fecha.getDate() || datosFecha[2] != fecha.getMonth() +1 || datosFecha[3] != fecha.getFullYear()){
                 fechaSpan.innerHTML = "La fecha es incorrecta. Ej 2124-03-2020.";
                 return false;
