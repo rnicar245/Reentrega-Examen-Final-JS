@@ -40,7 +40,6 @@
         let fecha;
         if(datosFecha != null){
             fecha = new Date(datosFecha[2]+"-"+datosFecha[1]+"-"+datosFecha[3]); 
-            console.log(fecha);
             if(datosFecha[1] != fecha.getDate() || datosFecha[2] != fecha.getMonth() +1 || datosFecha[3] != fecha.getFullYear()){
                 elemento.nextElementSibling.innerHTML = "La fecha es incorrecta. Ej 2124-03-2020.";
                 return false;
