@@ -38,23 +38,24 @@
         let expresion = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
         let datosFecha = expresion.exec(elemento.value);
         let fecha;
-        if(datosFecha != null){
+        let fechaSpan = document.getElementById("msj_fecha");
+        if(datosFecha != null){ 
             fecha = new Date(datosFecha[2]+"-"+datosFecha[1]+"-"+datosFecha[3]); 
             if(datosFecha[1] != fecha.getDate() || datosFecha[2] != fecha.getMonth() +1 || datosFecha[3] != fecha.getFullYear()){
-                elemento.nextElementSibling.innerHTML = "La fecha es incorrecta. Ej 2124-03-2020.";
+                fechaSpan.innerHTML = "La fecha es incorrecta. Ej 2124-03-2020.";
                 return false;
             }
     
             if(fecha > new Date()){
-                elemento.nextElementSibling.innerHTML = "La fecha de nacimiento es mayor que la actual. ¿Vienes del futuro?";
+                fechaSpan.innerHTML = "La fecha de nacimiento es mayor que la actual. ¿Vienes del futuro?";
                 return false;
             }
     
-            elemento.nextElementSibling.innerHTML = "";
+            fechaSpan.innerHTML = "";
             return true;
     
         }else{
-            elemento.nextElementSibling.innerHTML = "El formato de la fecha es incorrecto. Ej 09-03-2020.";
+            fechaSpan.innerHTML = "El formato de la fecha es incorrecto. Ej 09-03-2020.";
             return false; 
         }
     }
